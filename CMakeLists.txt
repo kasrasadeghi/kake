@@ -1,0 +1,6 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
+
+project(kake)
+message("project: " ${CMAKE_PROJECT_NAME})
+
+ADD_SUBDIRECTORY(src)
