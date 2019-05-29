@@ -20,16 +20,14 @@ int main(int argc, char* argv[]) {
 
   ifstream kakefile {"kakefile"};
 
-  char buff[100];
-  
-  while (kakefile.getline(buff, 100)) {
-    auto s = string(buff);
-    if (s.empty()) continue;
+  std::string line;
+  while (std::getline(kakefile, line)) {
+    if (line.empty()) continue;
 
-    if (s[0] != ' ') {
-      targets.emplace_back(s);
+    if (line[0] != ' ') {
+      targets.emplace_back(line);
     } else {
-      targets.back().lines.emplace_back(s.substr(2));
+      targets.back().lines.emplace_back(line.substr(2));
     }
   }
 
