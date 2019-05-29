@@ -1,1 +1,2 @@
-hello world
+  [ -d build ] || mkdir build
+  (cd build; cmake ..; cmake --build .) > /dev/null
